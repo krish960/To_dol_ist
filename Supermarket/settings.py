@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'Supermarket.urls'
