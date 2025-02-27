@@ -37,3 +37,6 @@ def task_deleted(req):
     task = get_object_or_404(models.Task, id=order_id)  
     task.delete()  
     return redirect("/home") 
+
+def about(req):
+	return render(req,"about.html")
