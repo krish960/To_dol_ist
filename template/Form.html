@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product Form</title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Font Awesome (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            width: 100%;
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+
+        .back-links {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .back-links a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 14px;
+            margin: 0 10px;
+        }
+
+        .back-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2><i class="fas fa-box"></i> Product Form</h2>
+
+        <div class="back-links">
+            <a href="/home"><i class="fas fa-list"></i> Show List</a>
+            <a href="list_task/"><i class="fas fa-tasks"></i> View Tasks</a>
+        </div>
+
+        <form method="POST" action="/save_form/">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label for="name" class="form-label"><i class="fas fa-tag"></i> Product Name:</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="created_date" class="form-label"><i class="fas fa-calendar"></i> Create Date:</label>
+                <input type="date" id="created_date" name="created_date" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="status" class="form-label"><i class="fas fa-toggle-on"></i> Status:</label>
+                <select id="status" name="status" class="form-select">
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="expiry_date" class="form-label"><i class="fas fa-hourglass-end"></i> Expiry Date:</label>
+                <input type="date" id="expiry_date" name="expiry_date" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label for="priority" class="form-label"><i class="fas fa-exclamation-circle"></i> Priority:</label>
+                 <select id="status" name="priority" class="form-select">
+                    <option value="HIGH">HIGH</option>
+                    <option value="Low">MEDIUM</option>
+                    <option value="Low">Low</option>
+
+                </select>
+            </div>
+
+            <button type="submit" class="btn-custom"><i class="fas fa-paper-plane"></i> Submit</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
